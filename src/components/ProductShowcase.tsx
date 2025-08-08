@@ -13,7 +13,14 @@ const ProductShowcase = () => {
       image: "https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=576,fit=crop/cdn-ecommerce/store_01K134WF9R388QSVYED5B2ZDJJ/assets/fa713781-5152-48e8-b270-efa36ea8fc26.png",
       rating: 4.8,
       reviews: 124,
-      description: "Traditional recipe with jaggery and wheat flour"
+      description: "Traditional recipe with jaggery and wheat flour",
+      highlights: [
+        "Made fresh for every order",
+        "Crispy outside, soft inside",
+        "Perfect with evening tea",
+        "No artificial flavors"
+      ],
+      tagline: "A taste of home in every bite"
     },
     {
       id: 2,
@@ -23,7 +30,14 @@ const ProductShowcase = () => {
       image: "https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=576,fit=crop/cdn-ecommerce/store_01K134WF9R388QSVYED5B2ZDJJ/assets/fa713781-5152-48e8-b270-efa36ea8fc26.png",
       rating: 4.9,
       reviews: 89,
-      description: "Made with pure ghee and premium ingredients"
+      description: "Made with pure ghee and premium ingredients",
+      highlights: [
+        "Rich pure ghee aroma",
+        "Golden-brown perfection",
+        "Melt-in-mouth texture",
+        "Perfect for gifting"
+      ],
+      tagline: "Luxury in every crunch"
     },
     {
       id: 3,
@@ -33,14 +47,21 @@ const ProductShowcase = () => {
       image: "https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=576,fit=crop/cdn-ecommerce/store_01K134WF9R388QSVYED5B2ZDJJ/assets/42908158-b92d-45b4-8bc4-4cfe69df3ce9.png",
       rating: 4.7,
       reviews: 156,
-      description: "Perfect for gifting and small families"
+      description: "Perfect for gifting and small families",
+      highlights: [
+        "Ideal for travel",
+        "Budget-friendly",
+        "Fresh & tasty",
+        "Kid-approved"
+      ],
+      tagline: "Small size, big happiness"
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % products.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -55,44 +76,59 @@ const ProductShowcase = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
             Our <span className="text-amber-600">Signature</span> Collection
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Handcrafted with love, each Thekua tells a story of tradition and authentic flavors
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Handcrafted with love — each Thekua tells a story of tradition, flavor, and warmth.
           </p>
         </div>
 
+        {/* Carousel */}
         <div className="relative">
-          {/* Main Carousel */}
-          <div className="overflow-hidden rounded-2xl">
+          <div className="overflow-hidden rounded-3xl shadow-xl">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {products.map((product, index) => (
+              {products.map((product) => (
                 <div key={product.id} className="w-full flex-shrink-0">
-                  <div className="grid md:grid-cols-2 gap-12 items-center bg-white p-8 md:p-16 rounded-2xl shadow-xl">
-                    {/* Product Image */}
+                  <div className="grid md:grid-cols-2 gap-12 items-center bg-white p-8 md:p-16 rounded-3xl hover:shadow-2xl transition-all duration-300">
+
+                    {/* Image */}
                     <div className="relative group">
-                      <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-amber-100 to-orange-100 p-8">
+                      <div className="aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-amber-100 to-orange-100 p-8">
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
-                      <button className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full hover:bg-white transition-colors">
+                      <button className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-3 rounded-full hover:bg-white transition-colors shadow-md">
                         <Heart className="h-5 w-5 text-gray-600 hover:text-red-500" />
                       </button>
                     </div>
 
-                    {/* Product Info */}
+                    {/* Info */}
                     <div className="space-y-6">
                       <div>
-                        <h3 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h3>
-                        <p className="text-gray-600 text-lg">{product.description}</p>
+                        <h3 className="text-4xl font-bold text-gray-900 mb-3">{product.name}</h3>
+                        <p className="text-lg text-gray-600">{product.description}</p>
+
+                        {/* Highlights */}
+                        <ul className="mt-4 space-y-2 text-gray-700 list-disc list-inside">
+                          {product.highlights.map((point, i) => (
+                            <li key={i}>{point}</li>
+                          ))}
+                        </ul>
+
+                        {/* Tagline */}
+                        <p className="mt-3 text-amber-700 font-semibold italic">
+                          “{product.tagline}”
+                        </p>
                       </div>
 
                       {/* Rating */}
@@ -101,11 +137,14 @@ const ProductShowcase = () => {
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              className={`h-5 w-5 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+                              className={`h-5 w-5 ${i < Math.floor(product.rating)
+                                ? 'text-yellow-400 fill-current'
+                                : 'text-gray-300'
+                                }`}
                             />
                           ))}
                         </div>
-                        <span className="text-gray-600">({product.reviews} reviews)</span>
+                        <span className="text-gray-600">{product.reviews} reviews</span>
                       </div>
 
                       {/* Price */}
@@ -117,7 +156,7 @@ const ProductShowcase = () => {
                         </span>
                       </div>
 
-                      {/* CTA Button */}
+                      {/* CTA */}
                       <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                         Add to Cart
                       </button>
@@ -128,7 +167,7 @@ const ProductShowcase = () => {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
+          {/* Arrows */}
           <button
             onClick={prevSlide}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
@@ -142,13 +181,13 @@ const ProductShowcase = () => {
             <ChevronRight className="h-6 w-6 text-gray-700" />
           </button>
 
-          {/* Dots Indicator */}
+          {/* Dots */}
           <div className="flex justify-center space-x-2 mt-8">
             {products.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentSlide ? 'bg-amber-600 w-8' : 'bg-gray-300'
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-amber-600 w-8' : 'bg-gray-300'
                   }`}
               />
             ))}
