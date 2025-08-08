@@ -80,7 +80,7 @@ const BrandStory = () => {
                 "Our grandmother's recipe, perfected over generations, now reaches your doorstep with 
                 the same love and care she put into every batch."
               </blockquote>
-              <cite className="text-amber-600 font-semibold mt-2 block">- Founder, SwadThekua</cite>
+              <cite className="text-amber-600 font-semibold mt-2 block">- Founder, Snackduo</cite>
             </div>
           </div>
 

@@ -46,7 +46,7 @@ const Benefits = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Why Choose <span className="text-amber-600">SwadThekua</span>?
+            Why Choose <span className="text-amber-600">Snackduo</span>?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We're committed to delivering not just delicious Thekua, but an experience that honors tradition while meeting modern standards
@@ -83,7 +83,7 @@ const Benefits = () => {
           <div className="bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Experience Authentic Taste?</h3>
             <p className="text-amber-100 mb-6 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who have made SwadThekua their go-to choice for traditional snacks
+              Join thousands of satisfied customers who have made Snackduo their go-to choice for traditional snacks
             </p>
             <button className="bg-white text-amber-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 duration-200 shadow-lg">
               Order Your First Pack Today

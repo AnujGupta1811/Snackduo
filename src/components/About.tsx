@@ -88,7 +88,7 @@ const About = () => {
               More Than Just a <span className="text-amber-600">Snack</span>
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed">
-              SwadThekua was born from a simple belief: that authentic taste should never be compromised. 
+              Snackduo was born from a simple belief: that authentic taste should never be compromised. 
               What started as our grandmother's special recipe for Chhath Puja has evolved into a 
               mission to preserve and share the rich culinary heritage of Bihar with the world.
             </p>

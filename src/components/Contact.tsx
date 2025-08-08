@@ -41,7 +41,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["orders@swadthekua.com", "support@swadthekua.com"],
+      details: ["orders@Snackduo.com", "support@Snackduo.com"],
       color: "from-blue-500 to-blue-600"
     },
     {
