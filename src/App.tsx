@@ -8,6 +8,7 @@ import Hero from './components/Hero';
 import Products from './components/Products';
 import About from './components/About';
 import Contact from './components/Contact';
+import ProductSolo from './components/Products/ProductSolo';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/product" element={<ProductSolo />} />
         </Routes>
 
         <Footer />
