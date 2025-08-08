@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ShoppingCart, Phone } from 'lucide-react';
+import { Menu, X, ShoppingCart, Phone, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +28,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#fff7ed] backdrop-blur-md shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#fff7ed] backdrop-blur-md shadow-lg' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -46,13 +46,12 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                    isHome
+                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${isHome
                       ? isScrolled
                         ? 'text-gray-700 hover:text-amber-600'
                         : 'text-white hover:text-amber-300'
                       : 'text-gray-700 hover:text-amber-600'
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -65,10 +64,18 @@ const Navbar = () => {
             <button className={`transition-colors ${isHome && !isScrolled ? 'text-white' : 'text-gray-700 hover:text-amber-600'}`}>
               <ShoppingCart className="h-6 w-6" />
             </button>
+            <Link
+              to="/signin"
+              className={`transition-colors ${isHome && !isScrolled ? 'text-white' : 'text-gray-700 hover:text-amber-600'
+                }`}
+            >
+              <User className="h-6 w-6" />
+            </Link>
             <button className="bg-amber-600 text-white px-4 py-2 rounded-full hover:bg-amber-700 transition-colors flex items-center space-x-2">
               <Phone className="h-4 w-4" />
               <span>Order Now</span>
             </button>
+
           </div>
 
           {/* Mobile menu button */}
