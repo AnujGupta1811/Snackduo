@@ -67,7 +67,7 @@ const ProductShowcase = () => {
         <div className="relative">
           {/* Main Carousel */}
           <div className="overflow-hidden rounded-2xl">
-            <div 
+            <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
@@ -77,8 +77,8 @@ const ProductShowcase = () => {
                     {/* Product Image */}
                     <div className="relative group">
                       <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-amber-100 to-orange-100 p-8">
-                        <img 
-                          src={product.image} 
+                        <img
+                          src={product.image}
                           alt={product.name}
                           className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
                         />
@@ -99,9 +99,9 @@ const ProductShowcase = () => {
                       <div className="flex items-center space-x-2">
                         <div className="flex items-center">
                           {[...Array(5)].map((_, i) => (
-                            <Star 
-                              key={i} 
-                              className={`h-5 w-5 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                            <Star
+                              key={i}
+                              className={`h-5 w-5 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
                             />
                           ))}
                         </div>
@@ -129,13 +129,13 @@ const ProductShowcase = () => {
           </div>
 
           {/* Navigation Buttons */}
-          <button 
+          <button
             onClick={prevSlide}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
           >
             <ChevronLeft className="h-6 w-6 text-gray-700" />
           </button>
-          <button 
+          <button
             onClick={nextSlide}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
           >
@@ -148,9 +148,8 @@ const ProductShowcase = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  index === currentSlide ? 'bg-amber-600 w-8' : 'bg-gray-300'
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentSlide ? 'bg-amber-600 w-8' : 'bg-gray-300'
+                  }`}
               />
             ))}
           </div>
